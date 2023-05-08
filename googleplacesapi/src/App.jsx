@@ -12,6 +12,5 @@ export default function App() {
 }
 
 /* TODO
-  - Alert user when address does not contain all needed information and require reprompt
   - If submit button is clicked alert user which fields still need to be filled out
 */
