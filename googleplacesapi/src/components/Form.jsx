@@ -136,16 +136,16 @@ export default function Form() {
             {/* If invalid is true render Alert component */}
             <Alert invalid={invalid}/>
             <form className='flex flex-col items-center w-96 border-2 mt-2'>
-                <input className='w-full p-2' type='text' value={address} onChange={handleAddress} placeholder="Address"></input>
+                <input className='w-full p-2 focus:outline-none' type='text' value={address} onChange={handleAddress} placeholder="Address"></input>
                 {/* Renders predictions from api */}
                 {places.map(place => (
                 <div className='w-full' key={place.place_id}>
                     <p className='hover:bg-slate-200 justify-center items-center' onClick={() => handleClick(place.place_id)}>{place.description}</p>
                 </div>
                 ))}
-                <input className='w-full p-2' type='text' value={city} onChange={handleCity} placeholder="City"></input>
-                <input className='w-full p-2' type='text' value={state} onChange={handleState} placeholder="State"></input>
-                <input className='w-full p-2' type='text' value={zip} onChange={handleZip} placeholder="Zip Code"></input>
+                <input className='w-full p-2 focus:outline-none' type='text' value={city} onChange={handleCity} placeholder="City"></input>
+                <input className='w-full p-2 focus:outline-none' type='text' value={state} onChange={handleState} placeholder="State"></input>
+                <input className='w-full p-2 focus:outline-none' type='text' value={zip} onChange={handleZip} placeholder="Zip Code"></input>
             </form>
             <button className='bg-blue-700 text-white font-bold py-2 px-16 rounded mt-2' type='submit' disabled={!address || !city || !zip}>Submit</button>
         </div>

@@ -1,9 +1,13 @@
+// 
+const apiPlaces = process.env.REACT_APP_API_PLACES
+const apiGeocode = process.env.REACT_APP_API_GEOCODE
+
 // Sends request to custom node api
 export const getAddresses = async (address) => {
-    const res = await fetch('http://localhost:3001/places', {
+    const res = await fetch(apiPlaces, {
     method: 'POST',
     mode: 'cors',
-    body: JSON.stringify({
+    body: JSON.stringify({ 
       address: address
     }),
     headers: {
@@ -20,8 +24,8 @@ export const getAddresses = async (address) => {
 
 // Sends placeId from places api to geocode api to get details about location
 export const getAddressDetails = async (placeId) => {
-    // Sends request to node api
-    const res = await fetch('http://localhost:3001/geocode', {
+    // Sends request to node api 
+    const res = await fetch(apiGeocode, {
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify({
