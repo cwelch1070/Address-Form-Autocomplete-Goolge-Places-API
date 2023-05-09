@@ -1,11 +1,12 @@
 // Imports
 const express = require('express')
 const cors = require('cors')
+require('dotenv').config()
 
 // Sets app variable to express library
 const app = express()
 // Defines what port the server will start on
-const port = 3001
+const port = process.env.PORT
 
 // Tells express to use JSON
 app.use(express.json())
@@ -14,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 // API key and google places and geocode URL's
-const apiKey = 'AIzaSyBVZ_W0xPkiNie-vu1K4Ty26PIKustwuw8'
+const apiKey = process.env.API_KEY
 const placesURL = 'https://maps.googleapis.com/maps/api/place/autocomplete/json'
 const geoCodeURL = 'https://maps.googleapis.com/maps/api/geocode/json'
 
